@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html style="font-size:100px;">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="release/css/app.css"/>
+    <link rel="stylesheet" href="font/iconfont.css"/>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<header class="search-header">
+    发现
+</header>
+<section class="search-input">
+    <div class="input-wrapper">
+        <input type="text" id="J_SearchCancel" placeholder="请输入"/>
+    </div>
+    <div class="input-cancel">取消</div>
+</section>
+<section class="search-list" id="J_SearchList">
+    <ul></ul>
+</section>
+
+<div id="J_Content" v-cloak>
+    <ul id="example-1">
+        <li v-for="item in items">
+            {{ item.title }}
+        </li>
+    </ul>
+</div>
+
+<script src="release/js/jquery.js"></script>
+<script src="release/js/vue.min.js"></script>
+<script>
+    var input = $('#J_SearchCancel'),
+            vm = null,
+            getList = function (keyword) {
+                $.ajax({
+                    url: '/api/search',
+                    type: 'GET',
+                    data: {
+                        keyword: keyword
+                    },
+                    success: function (data) {
+                        if (!!data.status || !data.list || data.list.length === 0) return;
+                        vm.items = data.list;
+                    }
+                })
+            },
+            init = function () {
+                //事件监听
+                input.on('input', function () {
+                    var keyword = $(this).val();
+                    getList(keyword);
+                });
+
+                //vm初始化
+                vm = new Vue({
+                    el: '#J_Content',
+                    data: {
+                        items: []
+                    }
+                })
+            };
+    init();
+</script>
+</body>
+</html>

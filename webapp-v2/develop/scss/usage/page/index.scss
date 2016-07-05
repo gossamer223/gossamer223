@@ -1,0 +1,77 @@
+
+.home {
+  width: 100%;
+  height: 100%;
+  @include flexbox();
+  @include flex-direction(column);
+}
+
+.l-header {
+  width: 100%;
+  height: .44rem;
+  background-color: #0dc441;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+footer {
+  width: 100%;
+  height: .44rem;
+  background-color: #0dc441;
+}
+
+.l-header ul {
+  width: 1.18rem;
+  @include flexbox();
+}
+
+.l-header ul li {
+  @include flex(1);
+  height: .25rem;
+  line-height: .25rem;
+  text-align: center;
+  background: #64d985;
+}
+
+.l-header ul li:first-child {
+  border-top-left-radius: .1rem;
+  border-bottom-left-radius: .1rem;
+}
+
+.l-header ul li:last-child {
+  border-top-right-radius: .1rem;
+  border-bottom-right-radius: .1rem;
+}
+
+.swiper-panel {
+  @include flex(1, column);
+  height: 100%;
+}
+
+.swiper-panel .swiper-container {
+  height: 100%;
+}
+
+.row {
+  @include flexbox();
+}
+
+.row .col:nth-child(2) {
+  width: .05rem;
+}
+
+.row .col:not(:nth-child(2)) {
+  @include flex(1);
+}
+
+.row .col img {
+  width: 100%;
+}
+
+.livescroll {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="release/css/app.css"/>
+</head>
+<body>
+<div class="home">
+    <header class="l-header">
+        <ul>
+            <li>热点</li>
+            <li>关注</li>
+        </ul>
+    </header>
+    <div class="swiper-panel">
+        <div class="swiper-container" id="swiper-home">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="swiper-container" id="swiper-index">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="livescroll" id="liveScroll">
+                                    <div>
+                                        <div class="row">
+                                            <div class="col"><img src="/images/img1.jpg">
+
+                                                <p>文字描述描述描述</p></div>
+                                            <div class="col"></div>
+                                            <div class="col"><img src="/images/img1.jpg">
+
+                                                <p>文字描述描述</p></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col"><img src="/images/img1.jpg">
+
+                                                <p>文字描述描述描述</p></div>
+                                            <div class="col"></div>
+                                            <div class="col"><img src="/images/img1.jpg">
+
+                                                <p>文字描述描述</p></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col"><img src="/images/img1.jpg">
+
+                                                <p>文字描述描述描述</p></div>
+                                            <div class="col"></div>
+                                            <div class="col"><img src="/images/img1.jpg">
+
+                                                <p>文字描述描述</p></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col"><img src="/images/img1.jpg">
+
+                                                <p>文字描述描述描述</p></div>
+                                            <div class="col"></div>
+                                            <div class="col"><img src="/images/img1.jpg">
+
+                                                <p>文字描述描述</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">Slide 6</div>
+                            <div class="swiper-slide">Slide 7</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">Slide 2</div>
+            </div>
+        </div>
+    </div>
+    <footer id="J-Footer">
+    </footer>
+</div>
+<script src="release/js/jquery.js"></script>
+<script src="release/js/swiper.min.js"></script>
+<script src="release/js/iscroll.js"></script>
+<script>
+    function buildSwiper() {
+        var swiper = new Swiper('#swiper-home');
+        var swiper2 = new Swiper('#swiper-index');
+
+        $('.l-header ul li').on('click', function () {
+            var i = $(this).index();
+            swiper.slideTo(i);
+        })
+    }
+    function buildIScroll() {
+        var winHeight = $(window).height();
+        var headerHeight = $('.l-header').height();
+        var footerHeight = $('#J-Footer').height();
+        var midHeight = winHeight - headerHeight - footerHeight;
+        //$('#liveScroll').css('height', midHeight + 'px');
+        // 上拉下拉
+        var liveScroll = new IScroll('#liveScroll', {
+            mouseWheel: true
+        });
+    }
+    function init() {
+        buildSwiper();
+        buildIScroll();
+    }
+    init();
+</script>
+</body>
+</html>

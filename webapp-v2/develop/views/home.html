@@ -1,0 +1,97 @@
+<div class="home">
+    <header class="home-header">
+        <ul>
+            <li class="active" @click="changeHome($event,0)">热点</li>
+            <li @click="changeHome($event,1)">关注</li>
+        </ul>
+    </header>
+    <div class="swiper-container" id="home-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <nav class="home-nav">
+                    <ul id="home-hot-nav">
+                        <li class="active" @click="changeHot($event,0)">足球现场</li>
+                        <li @click="changeHot($event,1)">足球生活</li>
+                        <li @click="changeHot($event,2)">足球美女</li>
+                    </ul>
+                </nav>
+                <div class="swiper-container" id="home-hot-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <section id="liveScroll">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <i><img ms-src="el[0].img"></i>
+                                            <b></b>
+                                        </li>
+                                        <li></li>
+                                        <li>
+                                            <i><img ms-src="el[1].img"></i>
+                                            <b></b>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="swiper-slide" id="lifescroll">
+                            22222
+                            <section id="waterfall"></section>
+                        </div>
+                        <div class="swiper-slide">
+                            33333
+                            <section id="css3waterfall">
+                                <div class="cont">
+                                    <div class="pic">
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide home-focus">
+                <section>
+                    <div>
+                        <ul>
+                            <li>
+                                <img src="/course-webapp/images/Pikachu.jpg"/>
+                            </li>
+                            <li class="zan">
+                                <h2>我是小萌</h2>
+
+                                <p>我是小萌我怕谁，哈哈哈哈哈！</p>
+                                <ul>
+                                    <li></li>
+                                    <li class="yo-ico" ms-attr-data-index="0" action-type="tap.dianzan">&#xe609;</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <img src="/course-webapp/images/img1.jpg">
+
+                        <p>小丸子呀小丸子</p>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <img src="/course-webapp/images/Pikachu.jpg"/>
+                            </li>
+                            <li class="zan">
+                                <h2>我是小萌</h2>
+
+                                <p>我是小萌我怕谁，哈哈哈哈哈！</p>
+                                <ul>
+                                    <li ms-html="zan[1]"></li>
+                                    <li class="yo-ico" ms-attr-data-index="1" action-type="tap.dianzan">&#xe609;</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <img src="/course-webapp/images/img1.jpg">
+
+                        <p>小丸子呀小丸子</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

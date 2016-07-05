@@ -1,0 +1,66 @@
+[
+  {
+    "url": "\\api\\imgs.GET.response.200.json",
+    "res": {
+      "status": 0,
+      "list": [
+        [
+          {
+            "src": "images/img1.jpg",
+            "title": "hello1"
+          },
+          {
+            "src": "images/img1.jpg",
+            "title": "hello2"
+          }
+        ],
+        [
+          {
+            "src": "images/img1.jpg",
+            "title": "hello1"
+          },
+          {
+            "src": "images/img1.jpg",
+            "title": "hello2"
+          }
+        ],
+        [
+          {
+            "src": "images/img1.jpg",
+            "title": "hello1"
+          },
+          {
+            "src": "images/img1.jpg",
+            "title": "hello2"
+          }
+        ],
+        [
+          {
+            "src": "images/img1.jpg",
+            "title": "hello1"
+          },
+          {
+            "src": "images/img1.jpg",
+            "title": "hello2"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "url": "\\api\\search.GET.response.200.json",
+    "res": {
+      "status": 0,
+      "list": [
+        {
+          "src": "xxx",
+          "title": "hello1"
+        },
+        {
+          "src": "xxx",
+          "title": "hello2"
+        }
+      ]
+    }
+  }
+]

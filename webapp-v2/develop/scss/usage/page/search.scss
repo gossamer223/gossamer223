@@ -1,0 +1,30 @@
+.search-header{
+  height: 0.45rem;
+  line-height: 0.45rem;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  background: #0dc441;
+}
+
+.search-input{
+  @include flexbox();
+  height: 0.3rem;
+  padding-top: 0.05rem;
+}
+
+.input-wrapper{
+  @include flex(1);
+}
+.input-wrapper input{
+  width: 100%;
+  padding-left: .1rem;
+}
+.input-cancel{
+  width: .5rem;
+  height: .25rem;
+  line-height: .25rem;
+  text-align: center;
+  background: #0dc441;
+  color: #fff;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="release/css/app.css"/>
+    <!--<script src="release/js/vue.js"></script>-->
+<body>
+<div class="home">
+    <header id="J_Header">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+        </ul>
+    </header>
+    <div class="home-flex">
+        <div class="swiper-container" id="J_Home">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <section class="home-main">
+                        <div class="home-main-header">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                        </div>
+                        <div class="home-main-slide">
+                            <div class="swiper-container" id="J_Index">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div id="J_Scroll">
+                                            <div>
+                                                <sina-list></sina-list>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">Slide 2</div>
+                                    <div class="swiper-slide">Slide 3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="swiper-slide">顶层 2</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</div>
+<script src="release/js/swiper.min.js"></script>
+<script src="release/js/jquery.js"></script>
+<script src="release/js/iscroll.js"></script>
+<script src="http://n.sinaimg.cn/sports/football_live/vue.min.js"></script>
+<script>
+        var buildScrollPanel = function () {
+                    var headerHeight = 104;
+                    var winHeight = $(window).height();
+                    var footerHeight = 44;
+                    var containerHeight = winHeight - 148 + 'px';
+                    $('#J_Scroll').css('height', containerHeight);
+                },
+                buildSwiper = function () {
+                    var swiperIndex = new Swiper('#J_Index', {
+                        loop: false
+                    });
+                    var swiperHome = new Swiper('#J_Home', {loop: false});
+
+                    $('#J_Header ul li').on('click', function () {
+                        var i = $(this).index();
+                        swiperHome.slideTo(i);
+                    })
+                },
+                init = function () {
+                    buildSwiper();
+                    buildScrollPanel();
+                };
+        init();
+
+//    var QianFeng = Vue.extend({
+//        template: '<div v-for="item in items" class="row"><div><img v-bind:src="item[0].src" alt=""/></div><div></div><div><img v-bind:src="item[1].src" alt=""/></div></div>',
+//        data: function () {
+//            return {
+//                test: "",
+//                items: []
+//            }
+//        },
+//        ready: function () {
+//            var me = this;
+//            $.ajax({
+//                url: '/api/imgs',
+//                type: 'GET',
+//                success: function (data) {
+//                    me.items = data.list;
+//                    // 定义
+////                    setTimeout(function(){
+//                        Vue.nextTick(function () {
+//                            new IScroll("#J_Scroll");
+//                        })
+////                    },1000)
+//
+//                }
+//            });
+//        }
+//    });
+//    // 全局注册组件，tag 为 my-component
+//    Vue.component('sina-list', QianFeng);
+//    new Vue({
+//        el: 'body'
+//    })
+</script>
+<script src="bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="font/iconfont.css"/>
+    <link rel="stylesheet" href="release/css/app.css"/>
+</head>
+<body>
+<div id="app" class="router-wrapper">
+
+    <div class="router-main">
+        <router-view></router-view>
+    </div>
+
+    <footer>
+        <ul>
+            <li>
+                <a v-link="{ path: '/home',activeClass: 'active'}">
+                    <i class="iconfont">&#xe6bb;</i>
+                    <b>首页</b>
+                </a>
+            </li>
+            <li>
+                <a v-link="{ path: '/search',activeClass: 'active'}">
+                    <i class="iconfont">&#xe65c;</i>
+                    <b>发现</b>
+                </a>
+            </li>
+            <li>
+                <a class="camera">
+                    <i class="iconfont">&#xe664;</i>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <i class="iconfont">&#xe735;</i>
+                    <b>我的</b>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <i class="iconfont">&#xe603;</i>
+                    <b>退出</b>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
+<script src="release/js/swiper.min.js"></script>
+<script src="release/js/jquery.js"></script>
+<script src="release/js/bundle.js"></script>
+</body>
+</html>
